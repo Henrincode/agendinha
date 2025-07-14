@@ -92,8 +92,10 @@ main {
   align-items: center;
   width: 100%;
   margin-top: 20px;
+  color: white;
 }
 #contatos .contato {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -105,8 +107,11 @@ main {
   margin: 4px;
   padding: 20px;
   border-radius: 10px;
-  color: white;
   background-color: #3a506b;
+}
+
+#contatos .contato:hover {
+  background-color: #90c4ff;
 }
 
 #contatos .foto {
@@ -117,10 +122,28 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 #contatos .nome {
   flex: 1;
   font-size: 30px;
   text-transform: capitalize;
+}
+
+#contatos .tel {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#contatos .lixeira {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#contatos .contato:hover .lixeira {
+  opacity: 1;
 }
