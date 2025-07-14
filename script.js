@@ -78,7 +78,7 @@ function listarContatos() {
           </ul>
         </div>
       `
-    })
+        })
 }
 
 // CONEXÃO COM BANCO
@@ -162,9 +162,28 @@ function limparForm() {
 
 // MÁSCARA PARA NÚMERO DE TELEFONE
 function telefone(numero) {
+    // Remove tudo que não for número
     numero = numero.toString()
-    const ddd = numero.substring(0, 2)
-    const parte1 = numero.substring(2, 7)
-    const parte2 = numero.substring(7)
-    return `${ddd} ${parte1}-${parte2}`
+
+    switch (numero.length) {
+        case 8:
+            // Fixo: 8888-4444
+            return `${numero.slice(0, 4)}-${numero.slice(4)}`
+
+        case 9:
+            // Celular sem DDD: 98888-4444
+            return `${numero.slice(0, 5)}-${numero.slice(5)}`
+
+        case 10:
+            // Fixo com DDD: 19 8888-4444
+            return `${numero.slice(0, 2)} ${numero.slice(2, 6)}-${numero.slice(6)}`
+
+        case 11:
+            // Celular com DDD: 19 98888-4444
+            return `${numero.slice(0, 2)} ${numero.slice(2, 7)}-${numero.slice(7)}`
+
+        default:
+            // Retorna apenas os números se não for um formato conhecido
+            return numero
+    }
 }
