@@ -1,10 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
   font-family: "Poppins";
+  transition: 300ms;
 }
 
 h1,
@@ -33,26 +37,90 @@ header {
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#novo-contato {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  max-width: 350px;
+  width: 100%;
+  margin-top: 10px;
+
+  font-family: 'Poppins';
+}
+
+#novo-contato .campos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#novo-contato input {
+  width: 100%;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 10px;
+  color: #e5f1ff;
+  font-size: 20px;
+  background-color: #3a506b;
+}
+
+#novo-contato button {
+  cursor: pointer;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  color: #1c2541;
+  font-size: 20px;
+  background-color: #90c4ff;
+}
+
+#novo-contato button:hover {
+  color: #90c4ff;
+  background-color: #3a506b;
 }
 
 #contatos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
 }
 #contatos .contato {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
   max-width: 350px;
   width: 100%;
   max-height: 500px;
   height: 100%;
+  margin: 4px;
   padding: 20px;
   border-radius: 10px;
   color: white;
   background-color: #3a506b;
+}
+
+#contatos .foto {
+  font-size: 60px;
+}
+
+#contatos ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contatos .nome {
+  flex: 1;
+  font-size: 30px;
+  text-transform: capitalize;
 }
